@@ -3,6 +3,8 @@
 # Django modules
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+from django.db.models.fields.related import OneToOneField
+
 
 """ 
 About BaseUserManager:
@@ -18,9 +20,9 @@ UserManager class will:
 2. not have any field
 """
 class UserManager(BaseUserManager):
-	# Defining create_user method with parameters:self, first_name, last_name, username, email, password=None
+    # Defining create_user method with parameters:self, first_name, last_name, username, email, password=None
     def create_user(self, first_name, last_name, username, email, password=None):
-    	# Check email
+        # Check email
         if not email:
             raise ValueError('User must have an email address')
 
@@ -45,8 +47,8 @@ class UserManager(BaseUserManager):
 
     # Defining create_superuser method with parameters:self, first_name, last_name, username, email, password=None
     def create_superuser(self, first_name, last_name, username, email, password=None):
-    	# The 'normal user' actually has been created using the create_user method above. 
-    	# Now assigning it as superuser with these values: email, username, password, first_name, and last_name.
+        # The 'normal user' actually has been created using the create_user method above. 
+        # Now assigning it as superuser with these values: email, username, password, first_name, and last_name.
         user = self.create_user(
             email = self.normalize_email(email),
             username = username,
@@ -70,7 +72,7 @@ This AbstractBaseUser will give you full control over Django's user model.
 You can do whatever you want to do with this AbstractBaseUser model.
 """
 
-# CustomUser will contain fields
+# User will contain fields
 class User(AbstractBaseUser):
     VENDOR = 1
     CUSTOMER = 2
@@ -114,7 +116,7 @@ class User(AbstractBaseUser):
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
 
     # To tell django which class to use. In this case we use UserManager class.
-    # In the settings.py file we have to define to using CustomUser
+    # In the settings.py file we have to define to using User
     objects = UserManager()
 
     def __str__(self):
@@ -138,3 +140,23 @@ class User(AbstractBaseUser):
         elif self.role == 2:
             user_role = 'Customer'
         return user_role
+
+
+# User profile
+class UserProfile(models.Model):
+    user = OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
+    profile_picture = models.ImageField(upload_to='users/profile_pictures', blank=True, null=True)
+    cover_photo = models.ImageField(upload_to='users/cover_photos', blank=True, null=True)
+    address_line_1 = models.CharField(max_length=100, blank=True, null=True)
+    address_line_2 = models.CharField(max_length=100, blank=True, null=True)
+    country = models.CharField(max_length=15, blank=True, null=True)
+    state = models.CharField(max_length=15, blank=True, null=True)
+    city = models.CharField(max_length=15, blank=True, null=True)
+    pin_code = models.CharField(max_length=6, blank=True, null=True)
+    latitude = models.CharField(max_length=20, blank=True, null=True)
+    longitude = models.CharField(max_length=20, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.user.email

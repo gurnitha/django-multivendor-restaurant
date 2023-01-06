@@ -283,10 +283,33 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
         modified:   README.md
         modified:   app/accounts/admin.py
-        
+
 #### 23. Userprofile Overview
+	pass
+
+	NEXT: 
+
+	Create UserProfile model
 
 #### 24. User Profile Model
+
+	1. Create UserProfile model
+	2. Install Pillow for images: pip install pillow
+	3. Run and apply migrations
+	4. Register UserProfile model in admin
+	5. Add image to user profile
+	6. It will create new folder in the root dir:users/cover_photos and users/profile_pictures
+	7  Testing: link gambar tidak berfungsi karena media file belum disetup
+	8. Git commit
+
+        modified:   README.md
+        modified:   app/accounts/admin.py
+        new file:   app/accounts/migrations/0002_userprofile.py
+        modified:   app/accounts/models.py
+
+        NEXT:
+
+        Add and configure media files path
 
 #### 25. Media Files Configuration
 
