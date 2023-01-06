@@ -157,6 +157,10 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
 	        modified:   README.md
 
+#### 18.2 Db configuration - Connecting the db with the project
+
+        modified:   README.md
+        modified:   config/settings.py
 
 #### 19. Store Sensitive Info And Push Code
 
