@@ -233,7 +233,42 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         3. Run migrate
         4. Create superuser
 
-#### 21. Recreate Table And Register User Model
+#### 21.1 Fixing error: replacing db.sqlite3 with Postgres
+
+	(venv3932) λ python manage.py makemigrations
+	Migrations for 'accounts':
+	  app\accounts\migrations\0001_initial.py
+	    - Create model User
+
+	(venv3932) λ python manage.py migrate
+
+	(venv3932) λ python manage.py createsuperuser
+	Email: ingafter63@gmail.com
+	Username: superuser
+	First name: super
+	Last name: user
+	Password:
+	Password (again):
+	The password is too similar to the email.
+	Bypass password validation and create user anyway? [y/N]: y
+	Superuser created successfully.
+
+	NOTE:
+
+	Done successfully
+
+	NEXT:
+
+	Register User model to admin
+
+#### 21.2 Register User model to admin.py
+
+        modified:   README.md
+        modified:   app/accounts/admin.py
+
+        NEXT:
+
+        Customising user display in admin panel
 
 #### 22. Make Password Noneditable
 
