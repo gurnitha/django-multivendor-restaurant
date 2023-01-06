@@ -39,9 +39,13 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
 
 #### 5. Gitbash Vscode Installation
+		pass
 
 #### 6. Create Virtual Environment
-
+		
+		python -m venv venv3932
+        modified:   README.md
+        
 #### 7. Install Django & Start Project
 
 #### 8. Hello World
