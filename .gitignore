@@ -8,6 +8,7 @@ __pycache__/
 venv3932
 sourcecodes
 main/static/
+config/static/
 static
 .env
 docs

@@ -128,6 +128,12 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         modified:   README.md
         modified:   templates/home.html
 
+#### 15.2 Configure Static Files Directory and Path
+
+        modified:   .gitignore
+        modified:   README.md
+        modified:   config/settings.py
+
 #### 16. Collectstatic
 
 
