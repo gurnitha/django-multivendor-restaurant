@@ -172,10 +172,22 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         modified:   README.md
         modified:   config/settings.py	
 
-## 05. Custom user model, Media files, dan Django signals
 
+## 05. Custom User Model, Media Files and Django Signals
 
-#### 20. Cutom User Model
+#### 20.1 Create Accounts App
+
+	(venv3932) λ mkdir app\accounts
+	(venv3932) λ django-admin startapp accounts app\accounts
+
+        new file:   app/accounts/__init__.py
+        new file:   app/accounts/admin.py
+        new file:   app/accounts/apps.py
+        new file:   app/accounts/migrations/__init__.py
+        new file:   app/accounts/models.py
+        new file:   app/accounts/tests.py
+        new file:   app/accounts/views.py
+        modified:   README.md
 
 #### 21. Recreate Table And Register User Model
 
