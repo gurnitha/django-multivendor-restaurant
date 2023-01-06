@@ -369,6 +369,27 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         modified:   README.md
         modified:   app/accounts/models.py
 
+#### 26.4 Django Signals To Create User Profile - Part 4: Meng-update user yang profilenya telah dihapus
+
+	1. Update: def post_save_create_profile_receiver(sender, instance, created, **kwargs):
+	2. dengan yang di bawah ini:
+	3. profile = UserProfile.objects.get(User=instance)
+	4. profile.save()
+	5. print('User profile is updated')  
+	6. Tesing: hapus User profile dan update user yang sama.
+	7. Result: hasil error (Cannot resolve keyword 'User' into field)
+	8. Git commit
+
+	NEXT:
+
+	Use try block to solve the problem.
+
+        modified:   README.md
+        new file:   app/accounts/models-OLD.py
+        modified:   app/accounts/models.py
+        modified:   config/settings.py
+
+
 ## 06. Custom User Model, Django Messages, Media Files and Django Signals
 
 
