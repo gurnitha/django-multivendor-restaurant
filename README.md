@@ -45,9 +45,18 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 		
 		python -m venv venv3932
         modified:   README.md
-        
-#### 7. Install Django & Start Project
 
+#### 7. Install Django, Create Django Project and App
+
+#### 7.1 Install Django
+
+		λ .\venv3932\Scripts\activate.bat
+		(venv3932) λ pip install django==3.2.*
+		(venv3932) λ python.exe -m pip install --upgrade pip
+
+        modified:   README.md
+        new file:   manage.py
+        
 #### 8. Hello World
 
 #### 9. GitHub Setup
