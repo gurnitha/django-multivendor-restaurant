@@ -46,7 +46,7 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 		python -m venv venv3932
         modified:   README.md
 
-#### 7. Install Django, Create Django Project and App
+#### 7. Install Django and Create Django Project
 
 #### 7.1 Install Django
 
@@ -60,7 +60,7 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 #### 7.2 Create Django Project 'config'
 
 		(venv3932) λ django-admin startproject config .
-		
+
         modified:   README.md
         new file:   config/__init__.py
         new file:   config/asgi.py
@@ -69,8 +69,14 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         new file:   config/wsgi.py
         new file:   manage.py
 
-#### 8. Hello World
+#### 8. Hello World using HttpResponse
 
+		from django.http import HttpResponse
+
+        modified:   README.md
+        modified:   config/urls.py
+        new file:   config/views.py
+        
 #### 9. GitHub Setup
 
 #### 10. FoodOnline Full Project Git Repository
