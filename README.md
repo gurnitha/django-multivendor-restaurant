@@ -189,6 +189,12 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         new file:   app/accounts/views.py
         modified:   README.md
 
+#### 20.2 Register accounts app to config
+
+        modified:   app/accounts/apps.py
+        modified:   config/settings.py
+        modified:   README.md
+        
 #### 21. Recreate Table And Register User Model
 
 #### 22. Make Password Noneditable
