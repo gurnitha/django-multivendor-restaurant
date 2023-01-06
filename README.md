@@ -134,6 +134,11 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         modified:   README.md
         modified:   config/settings.py
 
+#### 15.3 Loading static files to homepage
+
+        modified:   README.md
+        modified:   templates/home.html
+        
 #### 16. Collectstatic
 
 
