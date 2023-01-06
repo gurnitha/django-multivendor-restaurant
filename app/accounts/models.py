@@ -63,7 +63,78 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+
+""" 
+About AbstractBaseUser:
+This AbstractBaseUser will give you full control over Django's user model.
+You can do whatever you want to do with this AbstractBaseUser model.
+"""
+
 # CustomUser will contain fields
 class CustomUser(AbstractBaseUser):
-	pass
+    VENDOR = 1
+    CUSTOMER = 2
 
+    ROLE_CHOICE = (
+        (VENDOR, 'Vendor'),
+        (CUSTOMER, 'Customer'),
+    )
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    username = models.CharField(max_length=50, unique=True)
+    email = models.EmailField(max_length=100, unique=True)
+    phone_number = models.CharField(max_length=12, blank=True)
+    role = models.PositiveSmallIntegerField(choices=ROLE_CHOICE, blank=True, null=True)
+
+    # required fields
+    date_joined = models.DateTimeField(auto_now_add=True)
+    last_login = models.DateTimeField(auto_now_add=True)
+    created_date = models.DateTimeField(auto_now_add=True)
+    modified_date = models.DateTimeField(auto_now=True)
+    is_admin = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
+    is_superadmin = models.BooleanField(default=False)
+
+    """
+    About Login field:
+    Django uses username as a login field by default.
+    But we want to use email as login filed, instead of username.
+    So we have to override the username.
+
+    We also define the required fields: username, first_name, and last_name.
+    So the required field is username.
+    Email is also required field, but we don't need to put that email inside the required
+    fields list because username field itself is a required field.
+    So that's why we don't need to put email here. username, first_name and last_name
+    also be required fields. 
+    """
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
+
+    # To tell django which class to use. In this case we use UserManager class.
+    # In the settings.py file we have to define to using CustomUser
+    objects = UserManager()
+
+    def __str__(self):
+        return self.email
+
+    def has_perm(self, perm, obj=None):
+        return self.is_admin
+
+    """
+    About has_module_perms:
+    We'll return True if the user is an active superuser or is an admin.
+    And for inactive users it will be always return false.
+    That means by default, only admin and superadmin can have access to this model.
+    """
+    def has_module_perms(self, app_label):
+        return True
+
+    def get_role(self):
+        if self.role == 1:
+            user_role = 'Vendor'
+        elif self.role == 2:
+            user_role = 'Customer'
+        return user_role
