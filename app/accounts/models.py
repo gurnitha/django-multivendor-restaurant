@@ -210,10 +210,17 @@ def post_save_create_profile_receiver(sender, instance, created, **kwargs):
         '''
         1. If User profile is updated, then 'created' is false.
         2. Create User profile and save it.
+        3. Jika User profile dihapus, kemudian user di-update, akan error.
+        4. Gunakan try block untuk menghindari situasi ini.
         '''
-        profile = UserProfile.objects.get(User=instance)
-        profile.save()
-        print('User profile is updated')
+        try:
+            profile = UserProfile.objects.get(User=instance)
+            profile.save()
+        except:
+            # Create user profile if not exist
+            UserProfile.objects.create(user=instance)
+            print('Profile was not exist, but I created one')
+        print('User is updated')             
 
 '''Bellow is the way to connect with the receiver.
 But we will use @ (decocator), see above''' 

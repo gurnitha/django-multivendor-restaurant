@@ -389,6 +389,26 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         modified:   app/accounts/models.py
         modified:   config/settings.py
 
+#### 26.5 Django Signals To Create User Profile - Part 5: Menggunakan try block untuk atasi masalah di atas(26.4)
+
+	1. Update: def post_save_create_profile_receiver(sender, instance, created, **kwargs):
+	2. Gunakan try block
+	3. Testing: Delete a user profile of a user, and update the same user
+	4. Result: A new user profile created (berhasil) 
+	5. Git commit
+
+        In the terminal:
+
+	False
+	Profile was not exist, but I created one
+	User is updated
+
+        modified:   README.md
+        modified:   app/accounts/models.py
+
+        NEXT:
+
+        Use pre_save signals untuk hindari kemungkinan masalah (26.25)
 
 ## 06. Custom User Model, Django Messages, Media Files and Django Signals
 
