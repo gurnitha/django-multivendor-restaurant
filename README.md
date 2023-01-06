@@ -421,7 +421,15 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
         Result error
 
+#### 26.7 Django Signals To Create User Profile - Part 7: Return to try block
 
+        modified:   app/accounts/models.py
+        modified:   README.md
+
+        NOTE:
+
+        A user profile yang terhapus, berhasil di-update melalui user ybs.
+        
 ## 06. Custom User Model, Django Messages, Media Files and Django Signals
 
 
