@@ -144,12 +144,19 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 		(venv3932) λ python manage.py collectstatic
         modified:   README.md
 
+
 ## 04. Database
 
 
 #### 17. Why Postgres Intro
+		pass
 
 #### 18. Postgres Configuration With Django
+
+#### 18.1 Db configuration - Create Postgres db
+
+	        modified:   README.md
+
 
 #### 19. Store Sensitive Info And Push Code
 
