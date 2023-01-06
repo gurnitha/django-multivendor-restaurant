@@ -76,12 +76,19 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         modified:   README.md
         modified:   config/urls.py
         new file:   config/views.py
-        
+
 #### 9. GitHub Setup
+		pass
 
 #### 10. FoodOnline Full Project Git Repository
+		pass
 
-#### 11. Django Templates Setup
+#### 11. Django Templates Setup to Display Hello World
+
+        modified:   README.md
+        modified:   config/settings.py
+        modified:   config/views.py
+        new file:   templates/home.html
 
 #### 12. Create Superuser
 
