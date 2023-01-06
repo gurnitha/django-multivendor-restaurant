@@ -313,6 +313,22 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
 #### 25. Media Files Configuration
 
+	1. Setup media files in settings.py
+	2. Configure its path in main/urls.py
+	3. Remove users folder
+	4. Re-add images to user profile
+	5  Testing: link gambar berfungsi dan media folder created
+	6. Git commit
+
+        modified:   config/settings.py
+        modified:   config/urls.py
+        renamed:    users/cover_photos/ing.jfif -> media/users/cover_photos/ing.jfif
+        renamed:    users/profile_pictures/ing.jfif -> media/users/profile_pictures/ing.jfif
+
+        NEXT:
+
+        Create django signals
+
 #### 26. Django Signals To Create User Profile
 
 
