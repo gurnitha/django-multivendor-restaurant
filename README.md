@@ -329,10 +329,32 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
         Create django signals
 
-#### 26. Django Signals To Create User Profile
+#### 26.1 Django Signals To Create User Profile - Part 1: Basic, create and test signals
 
+	1. In app/accounts/models.py impor post_save and receiver
+	2. Gunakan dekorator @receiver(post_save, sender=CustomUser)
+	3. Buat mothod dengan 4 parameter: def post_save_create_profile_receiver(sender, instance, created, **kwargs):
+	4. Testing: 
+	   - Add a new user from the admin panel
+	   - berhasil user profile created
+	5. Git commit
 
+        modified:   README.md
+        modified:   app/accounts/models.py
 
+#### 26.2 Django Signals To Create User Profile - Part 2: Membuat user profile dari admin panel secara otomatis
+
+	1. Pada : def post_save_create_profile_receiver(sender, instance, created, **kwargs): 
+	2. tambahkan ini: UserProfile.objects.create(user=instance)
+	3. Testing: buat user baru dari admin panel
+	4. Result: profile berhasil dibuat secara otomatis
+	5. Git commit
+
+        modified:   README.md
+        modified:   app/accounts/models.py
+
+        NEXT:
+        
 ## 06. Custom User Model, Django Messages, Media Files and Django Signals
 
 

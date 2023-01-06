@@ -1,10 +1,9 @@
-# app/accounts/models.py
-
 # Django modules
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 from django.db.models.fields.related import OneToOneField
-
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 """ 
 About BaseUserManager:
@@ -103,7 +102,6 @@ class User(AbstractBaseUser):
     Django uses username as a login field by default.
     But we want to use email as login filed, instead of username.
     So we have to override the username.
-
     We also define the required fields: username, first_name, and last_name.
     So the required field is username.
     Email is also required field, but we don't need to put that email inside the required
@@ -160,3 +158,45 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.email
+
+
+
+
+"""
+Well, the signals are the utilities or feature that helps us 
+to connect the events with the actions.
+So this simply means that signals are used to perform some actions 
+on every modification or creation
+of a particular entry in the database.
+So the most common use cases of using signal is to automatically 
+creating a profile instance as soon as the user is created.
+"""
+
+"""
+About Receiver and Sender:
+Receiver is a function, in this case: post_save_create_profile_receiver, 
+it takes 4 parameters:
+- sender (CustomeUser),
+- instance (that is something created by CustomeUser),
+- created (a boolean value, will show up when something is created), and
+- **kwargs.
+Sender is the CustomeUser model itself.
+"""
+@receiver(post_save, sender=User)
+def post_save_create_profile_receiver(sender, instance, created, **kwargs):
+    '''
+    So as soon as the user is created, 
+    or as soon as we get the response of created equal to true, 
+    then what we need to do, we need to actually create the user profile.
+    Steps:
+    1. Check created flag is being true or false.
+    2. If it is true, then create UserProfile
+    '''
+    print(created) # print something if user is created.
+    if created:
+        UserProfile.objects.create(user=instance)
+        print('User profile is created')
+
+'''Bellow is the way to connect with the receiver.
+But we will use @ (decocator), see above''' 
+# post_save.connect(post_save_create_profile_receiver, sender=User)
