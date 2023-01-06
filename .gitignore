@@ -3,6 +3,17 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+# by my ing
+venv3932
+sourcecodes
+main/static/
+static
+.env
+docs
+_docs
+
+
 # C extensions
 *.so
 
