@@ -138,10 +138,11 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
         modified:   README.md
         modified:   templates/home.html
-        
+
 #### 16. Collectstatic
 
-
+		(venv3932) λ python manage.py collectstatic
+        modified:   README.md
 
 ## 04. Database
 
