@@ -194,7 +194,12 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         modified:   app/accounts/apps.py
         modified:   config/settings.py
         modified:   README.md
-        
+
+#### 20.3 Create Custom User - Part 1: basics
+
+        modified:   README.md
+        modified:   app/accounts/models.py
+
 #### 21. Recreate Table And Register User Model
 
 #### 22. Make Password Noneditable
