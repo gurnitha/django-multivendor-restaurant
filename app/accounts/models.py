@@ -71,7 +71,7 @@ You can do whatever you want to do with this AbstractBaseUser model.
 """
 
 # CustomUser will contain fields
-class CustomUser(AbstractBaseUser):
+class User(AbstractBaseUser):
     VENDOR = 1
     CUSTOMER = 2
 

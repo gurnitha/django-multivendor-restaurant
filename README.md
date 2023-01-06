@@ -215,6 +215,24 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         modified:   README.md
         modified:   app/accounts/models.py
 
+#### 20.7 Create Custom User - Part 5: Register User to settings.py
+
+        modified:   README.md
+        modified:   app/accounts/models.py
+        modified:   config/settings.py
+
+        NOTE:
+
+        1. Rename CustomUser model to User model
+        2. It has a warning: ValueError: Dependency on app with no migrations: accounts
+
+        NEXT:
+
+        1. Remove db.sqlite3 and migrations files
+        2. Run makemigrations
+        3. Run migrate
+        4. Create superuser
+
 #### 21. Recreate Table And Register User Model
 
 #### 22. Make Password Noneditable
