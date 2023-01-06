@@ -410,6 +410,18 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
         Use pre_save signals untuk hindari kemungkinan masalah (26.25)
 
+#### 26.6 Django Signals To Create User Profile - Part 6: Using pre_save
+
+        modified:   README.md
+        modified:   app/accounts/migrations/0001_initial.py
+        deleted:    app/accounts/migrations/0002_userprofile.py
+        modified:   app/accounts/models.py
+
+        NOTE:
+
+        Result error
+
+
 ## 06. Custom User Model, Django Messages, Media Files and Django Signals
 
 

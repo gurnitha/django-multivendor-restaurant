@@ -4,7 +4,7 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 from django.db.models.fields.related import OneToOneField
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 
 """ 
@@ -220,7 +220,13 @@ def post_save_create_profile_receiver(sender, instance, created, **kwargs):
             # Create user profile if not exist
             UserProfile.objects.create(user=instance)
             print('Profile was not exist, but I created one')
-        print('User is updated')             
+        print('User is updated')    
+
+
+@receiver(pre_save, sender=User)
+def pre_save_create_profile_receiver(sender, instance, **kwargs):
+    print(instance.username, 'this user is being saved')
+
 
 '''Bellow is the way to connect with the receiver.
 But we will use @ (decocator), see above''' 
