@@ -279,6 +279,11 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
         Customising user display in admin panel
 
+#### 22.2 Make Password Noneditable - Part 2: Customising user display in admin panel
+
+        modified:   README.md
+        modified:   app/accounts/admin.py
+        
 #### 23. Userprofile Overview
 
 #### 24. User Profile Model
