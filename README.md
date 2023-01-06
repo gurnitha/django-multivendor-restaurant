@@ -141,7 +141,7 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
 #### 16. Collectstatic
 
-		(venv3932) λ python manage.py collectstatic
+	(venv3932) λ python manage.py collectstatic
         modified:   README.md
 
 
@@ -164,7 +164,13 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
 #### 19. Store Sensitive Info And Push Code
 
+	pip install python-decouple
+	create .env file and .env-example
+	configure python-decouple
 
+        new file:   .env-sample
+        modified:   README.md
+        modified:   config/settings.py	
 
 ## 05. Custom user model, Media files, dan Django signals
 
