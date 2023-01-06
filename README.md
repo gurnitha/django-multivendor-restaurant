@@ -354,7 +354,21 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
         modified:   app/accounts/models.py
 
         NEXT:
-        
+
+#### 26.3 Django Signals To Create User Profile - Part 3: Upadate a user and its profile will be updated as well
+
+	1. Tambahkan else pada: def post_save_create_profile_receiver(sender, instance, created, **kwargs):
+	2. dan print('User profile is updated')
+	3. Testing: Update a user in admin panel and its profile will be updated as well. Berhasil!
+	4. Git commit 
+
+	NEXT:
+
+	Meng-update user yang profilenya telah dihapus
+
+        modified:   README.md
+        modified:   app/accounts/models.py
+
 ## 06. Custom User Model, Django Messages, Media Files and Django Signals
 
 

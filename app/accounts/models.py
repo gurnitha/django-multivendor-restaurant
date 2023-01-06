@@ -196,7 +196,16 @@ def post_save_create_profile_receiver(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
         print('User profile is created')
-
+        ''' User profile is created.
+        So now we have to create profile instance
+        to be able to update User profile
+        '''
+    else:
+        '''If User profile is updated,
+        then 'created' is false
+        '''
+        print('User profile is updated') 
+        
 '''Bellow is the way to connect with the receiver.
 But we will use @ (decocator), see above''' 
 # post_save.connect(post_save_create_profile_receiver, sender=User)
