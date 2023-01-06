@@ -116,10 +116,17 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
 
 #### 13. Purchase Foodbakery Template
+		pass
 
 #### 14. Template Walkthrough
+		pass
 
 #### 15. Homepage And Static Files Config
+
+#### 15.1 Add html template to homepage
+
+        modified:   README.md
+        modified:   templates/home.html
 
 #### 16. Collectstatic
 
