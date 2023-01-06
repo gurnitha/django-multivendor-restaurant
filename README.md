@@ -92,6 +92,24 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
 #### 12. Create Superuser
 
+		(venv3932) λ python manage.py makemigrations
+		(venv3932) λ python manage.py migrate
+		(venv3932) λ python manage.py createsuperuser
+			Username (leave blank to use 'hp'): admin
+			Email address: admin@admin.com
+			Password: admin
+			Password (again): admin
+			The password is too similar to the username.
+			This password is too short. It must contain at least 8 characters.
+			This password is too common.
+			Bypass password validation and create user anyway? [y/N]: y
+			Superuser created successfully.
+		(venv3932) λ python manage.py runserver
+		login: http://127.0.0.1:8000/admin/
+		username: admin
+		password: admin
+
+        modified:   README.md
 
 
 ## 03. Template
