@@ -421,15 +421,35 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
         Result error
 
-#### 26.7 Django Signals To Create User Profile - Part 7: Return to try block
+#### 26.7 Django Signals To Create User Profile - Part 7: Return to try block, but CAN NOT UPDATE a new user
 
         modified:   app/accounts/models.py
         modified:   README.md
 
         NOTE:
 
-        A user profile yang terhapus, berhasil di-update melalui user ybs.
-        
+        1. A user profile yang terhapus, berhasil di-update melalui user ybs.
+        2. Can create a new user, but CAN NOT UPDATE the user's fn, ln, email
+
+#### 26.8 Django Signals To Create User Profile - Part 8: Re-write signals
+
+	NOTE:
+
+	1. Error was in here: 
+
+	BEFORE: User=instance
+	profile = UserProfile.objects.get(User=instance)
+	
+	AFTER: user=instance
+	profile = UserProfile.objects.get(user=instance)
+
+        modified:   README.md
+        modified:   app/accounts/models.py
+        Testing :   Create a new user from admin
+        Result  :   User created, userprofile as well
+
+        :)
+
 ## 06. Custom User Model, Django Messages, Media Files and Django Signals
 
 
