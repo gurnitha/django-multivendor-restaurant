@@ -450,6 +450,19 @@ Udemy link: https://www.udemy.com/course/python-django-real-world-project-multi-
 
         :)
 
+#### 26.9 Django Signals To Create User Profile - Part 9: Move signals to seperate file: app/accounts/signals.py
+
+        modified:   README.md
+        modified:   app/accounts/apps.py
+        modified:   app/accounts/models.py
+        new file:   app/accounts/signals.py
+
+        Testing :   Create a new user
+        Result  :   The new user created and the userprofile as well.
+                    Update the user, its profile updated automaticall as well.
+
+        :)
+
 ## 06. Custom User Model, Django Messages, Media Files and Django Signals
 
 
